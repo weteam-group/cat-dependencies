@@ -14,11 +14,10 @@
     </description>
 
     <url>http://cat.lakex.cn</url>
-
     <licenses>
         <license>
-            <name>The MIT License</name>
-            <url>https://opensource.org/licenses/MIT</url>
+            <name>The LGPL License</name>
+            <url>http://www.gnu.org/licenses/lgpl-3.0.html</url>
         </license>
     </licenses>
 

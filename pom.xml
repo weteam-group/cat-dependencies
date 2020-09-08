@@ -32,7 +32,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.7.RELEASE</version>
+        <version>2.3.3.RELEASE</version>
     </parent>
 
     <properties>
@@ -53,23 +53,21 @@
 
         <!-- ===================== The third party ===================== -->
         <!-- spring boot && spring cloud -->
-        <mica.version>2.0.5-GA</mica.version>
-        <spring-boot.version>2.3.2.RELEASE</spring-boot.version>
-        <spring-cloud.version>Hoxton.SR7</spring-cloud.version>
+        <mica.version>2.0.6-GA</mica.version>
+        <spring-boot.version>2.3.3.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.1.RELEASE</spring-cloud-alibaba.version>
-        <retrofit-spring-boot-starter.version>2.0.2</retrofit-spring-boot-starter.version>
+        <retrofit-spring-boot-starter.version>2.1.2</retrofit-spring-boot-starter.version>
 
         <!-- utils -->
         <lombok.version>1.18.12</lombok.version>
         <mica-auto.version>1.2.5</mica-auto.version>
         <okhttp3.version>4.8.1</okhttp3.version>
-        <okio.version>2.7.0</okio.version>
+        <okio.version>2.8.0</okio.version>
         <jsoup.version>1.13.1</jsoup.version>
 
         <!-- swagger api doc -->
-        <springfox.version>2.10.5</springfox.version>
-        <swagger.version>1.6.2</swagger.version>
-        <swagger-spring-boot-starter.version>1.9.1.RELEASE</swagger-spring-boot-starter.version>
+        <springfox-boot-starter.version>3.0.0</springfox-boot-starter.version>
 
         <!-- data source -->
         <mysql-driver-6.version>6.0.6</mysql-driver-6.version> <!-- just version -->
@@ -77,7 +75,7 @@
         <jjwt.version>0.9.1</jjwt.version>
         <alibaba.jetcache.version>2.6.0</alibaba.jetcache.version>
         <alibaba.easyexcel.version>2.2.6</alibaba.easyexcel.version>
-        <alibaba.transmittable-thread-local.version>2.11.4</alibaba.transmittable-thread-local.version>
+        <alibaba.transmittable-thread-local.version>2.11.5</alibaba.transmittable-thread-local.version>
 
         <!-- google openSources -->
         <google.guava.version>29.0-jre</google.guava.version>
@@ -92,7 +90,7 @@
 
         <!-- WeChat Platform SDK -->
         <!-- https://github.com/Wechat-Group/WxJava -->
-        <weixin-java-tools.version>3.8.0</weixin-java-tools.version> <!-- just version -->
+        <weixin-java-tools.version>3.9.0</weixin-java-tools.version> <!-- just version -->
 
         <!-- test -->
         <junit-jupiter.version>5.6.2</junit-jupiter.version>
@@ -154,23 +152,8 @@
             <!-- swagger api doc -->
             <dependency>
                 <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${springfox.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-core</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.swagger</groupId>
-                <artifactId>swagger-annotations</artifactId>
-                <version>${swagger.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.spring4all</groupId>
-                <artifactId>swagger-spring-boot-starter</artifactId>
-                <version>${swagger-spring-boot-starter.version}</version>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${springfox-boot-starter.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.jsonwebtoken</groupId>

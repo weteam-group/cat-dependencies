@@ -68,6 +68,7 @@
 
         <!-- swagger api doc -->
         <springfox-boot-starter.version>3.0.0</springfox-boot-starter.version>
+        <swagger-annotations.v3.version>2.1.2</swagger-annotations.v3.version>
 
         <!-- data source -->
         <mysql-driver-6.version>6.0.6</mysql-driver-6.version> <!-- just version -->
@@ -82,6 +83,7 @@
         <google.guice.version>4.2.3</google.guice.version>
         <google.zxing.version>3.4.0</google.zxing.version>
         <google.tink.version>1.4.0</google.tink.version>
+        <google.findbugs.version>3.0.1</google.findbugs.version>
 
         <!-- java util -->
         <javax.jsr311-api.version>1.1.1</javax.jsr311-api.version>
@@ -156,6 +158,12 @@
                 <version>${springfox-boot-starter.version}</version>
             </dependency>
             <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger-annotations.v3.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
                 <groupId>io.jsonwebtoken</groupId>
                 <artifactId>jjwt</artifactId>
                 <version>${jjwt.version}</version>
@@ -198,6 +206,16 @@
                 <groupId>com.google.crypto.tink</groupId>
                 <artifactId>tink</artifactId>
                 <version>${google.tink.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>findbugs</artifactId>
+                <version>${google.findbugs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>annotations</artifactId>
+                <version>${google.findbugs.version}</version>
             </dependency>
 
             <!-- java util -->

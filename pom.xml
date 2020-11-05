@@ -32,7 +32,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.4.RELEASE</version>
+        <version>2.3.5.RELEASE</version>
     </parent>
 
     <properties>
@@ -54,7 +54,9 @@
         <!-- ===================== The third party ===================== -->
         <!-- Spring Boot && Spring Cloud -->
         <mica.version>2.0.8-GA</mica.version>
-        <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
+        <mica.pro.version>2.1.6-SNAPSHOT</mica.pro.version>
+        <spring-boot.version>2.3.5.RELEASE</spring-boot.version>
+        <spring-boot.admin.version>2.3.0</spring-boot.admin.version>
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
         <retrofit-spring-boot-starter.version>2.1.2</retrofit-spring-boot-starter.version>
@@ -65,6 +67,7 @@
         <okhttp3.version>4.9.0</okhttp3.version>
         <okio.version>2.9.0</okio.version>
         <jsoup.version>1.13.1</jsoup.version>
+        <aspectjweaver.version>1.9.6</aspectjweaver.version>
 
         <!-- swagger api doc -->
         <springfox-boot-starter.version>3.0.0</springfox-boot-starter.version>
@@ -84,7 +87,7 @@
         <google.guice.version>4.2.3</google.guice.version>
         <google.zxing.version>3.4.1</google.zxing.version>
         <google.tink.version>1.5.0</google.tink.version>
-        <google.findbugs.version>3.0.2</google.findbugs.version>
+        <google.findbugs.version>3.0.1</google.findbugs.version>
 
         <!-- Java Util -->
         <javax.jsr311-api.version>1.1.1</javax.jsr311-api.version>
@@ -109,8 +112,29 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>net.dreamlu</groupId>
+                <artifactId>mica-dependencies</artifactId>
+                <version>${mica.pro.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
-            <!-- Spring Cloud Import -->
+            <!-- Spring Import -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot.admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -124,6 +148,43 @@
                 <version>${spring-cloud-alibaba.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <!-- 强制排查依赖 tomcat -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-tomcat</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- 强制排查依赖 logging -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring-boot.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- Junit 排查 vintage -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot.version}</version>
+                <scope>test</scope>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.junit.vintage</groupId>
+                        <artifactId>junit-vintage-engine</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>com.github.lianjiatech</groupId>
@@ -151,6 +212,11 @@
                 <groupId>org.jsoup</groupId>
                 <artifactId>jsoup</artifactId>
                 <version>${jsoup.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectjweaver.version}</version>
             </dependency>
 
             <!-- Swagger Api Doc -->
@@ -225,11 +291,13 @@
                 <groupId>com.google.code.findbugs</groupId>
                 <artifactId>findbugs</artifactId>
                 <version>${google.findbugs.version}</version>
+                <scope>compile</scope>
             </dependency>
             <dependency>
                 <groupId>com.google.code.findbugs</groupId>
                 <artifactId>annotations</artifactId>
                 <version>${google.findbugs.version}</version>
+                <scope>compile</scope>
             </dependency>
 
             <!-- Java Util -->
@@ -314,7 +382,7 @@
                     <executions>
                         <execution>
                             <goals>
-                                <goal>repackage</goal>
+                                <goal>build-info</goal>
                             </goals>
                         </execution>
                     </executions>

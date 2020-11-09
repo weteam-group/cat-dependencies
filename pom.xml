@@ -500,18 +500,18 @@
                 </snapshotRepository>
             </distributionManagement>
         </profile>
-        <profile>
-            <id>aliyun-rdc</id>
-            <distributionManagement>
-                <repository>
-                    <id>rdc-release</id>
-                    <url>https://packages.aliyun.com/maven/repository/2022255-release-tukFBp/</url>
-                </repository>
-                <snapshotRepository>
-                    <id>rdc-snapshot</id>
-                    <url>https://packages.aliyun.com/maven/repository/2022255-snapshot-Ls0fsC/</url>
-                </snapshotRepository>
-            </distributionManagement>
-        </profile>
+<!--        <profile>-->
+<!--            <id>aliyun-rdc</id>-->
+<!--            <distributionManagement>-->
+<!--                <repository>-->
+<!--                    <id>rdc-release</id>-->
+<!--                    <url>https://packages.aliyun.com/maven/repository/2022255-release-tukFBp/</url>-->
+<!--                </repository>-->
+<!--                <snapshotRepository>-->
+<!--                    <id>rdc-snapshot</id>-->
+<!--                    <url>https://packages.aliyun.com/maven/repository/2022255-snapshot-Ls0fsC/</url>-->
+<!--                </snapshotRepository>-->
+<!--            </distributionManagement>-->
+<!--        </profile>-->
     </profiles>
 </project>

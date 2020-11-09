@@ -464,6 +464,43 @@
     <!-- 基于 Profiles 的 灵活仓库配置 -->
     <profiles>
         <profile>
+            <!-- sxw.cn 私有仓库配置 -->
+            <id>sxw-maven</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <id>maven-public</id>
+                    <url>http://nexus.sxw.cn/repository/maven-public/</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>maven-public</id>
+                    <url>http://nexus.sxw.cn/repository/maven-public/</url>
+                </pluginRepository>
+            </pluginRepositories>
+            <distributionManagement>
+                <repository>
+                    <id>maven-releases</id>
+                    <url>http://nexus.sxw.cn/repository/maven-releases/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>maven-snapshots</id>
+                    <url>http://nexus.sxw.cn/repository/maven-snapshots/</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+        <profile>
             <id>aliyun-rdc</id>
             <distributionManagement>
                 <repository>

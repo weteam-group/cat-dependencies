@@ -57,7 +57,7 @@
         <mica.pro.version>2.1.6-SNAPSHOT</mica.pro.version>
         <spring-boot.version>2.3.5.RELEASE</spring-boot.version>
         <spring-boot.admin.version>2.3.0</spring-boot.admin.version>
-        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+        <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
         <retrofit-spring-boot-starter.version>2.1.2</retrofit-spring-boot-starter.version>
 

@@ -53,7 +53,7 @@
 
         <!-- ===================== The third party ===================== -->
         <!-- Spring Boot && Spring Cloud -->
-        <mica.version>2.0.8-GA</mica.version>
+        <mica.version>2.0.9-GA</mica.version>
         <mica.pro.version>2.1.6-SNAPSHOT</mica.pro.version>
         <spring-boot.version>2.3.5.RELEASE</spring-boot.version>
         <spring-boot.admin.version>2.3.0</spring-boot.admin.version>

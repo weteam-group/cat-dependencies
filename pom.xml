@@ -55,7 +55,7 @@
         <!-- Spring Boot && Spring Cloud -->
         <mica.version>2.0.9-GA</mica.version>
         <mica.pro.version>2.1.6-SNAPSHOT</mica.pro.version>
-        <spring-boot.version>2.3.5.RELEASE</spring-boot.version>
+        <spring-boot.version>2.3.6.RELEASE</spring-boot.version>
         <spring-boot.admin.version>2.3.0</spring-boot.admin.version>
         <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
@@ -75,12 +75,12 @@
 
         <!-- Data Source -->
         <mysql-driver-6.version>6.0.6</mysql-driver-6.version> <!-- just version -->
-        <jooq.version>3.14.0</jooq.version>
+        <jooq.version>3.14.4</jooq.version>
 
         <jjwt.version>0.9.1</jjwt.version>
         <alibaba.jetcache.version>2.6.0</alibaba.jetcache.version>
         <alibaba.easyexcel.version>2.2.6</alibaba.easyexcel.version>
-        <alibaba.transmittable-thread-local.version>2.11.5</alibaba.transmittable-thread-local.version>
+        <alibaba.transmittable-thread-local.version>2.12.0</alibaba.transmittable-thread-local.version>
 
         <!-- Google OpenSources -->
         <google.guava.version>30.0-jre</google.guava.version>
@@ -454,64 +454,23 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-            </plugin>
         </plugins>
     </build>
 
     <!-- 基于 Profiles 的 灵活仓库配置 -->
     <profiles>
         <profile>
-            <!-- sxw.cn 私有仓库配置 -->
-            <id>sxw-maven</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <repositories>
-                <repository>
-                    <id>maven-public</id>
-                    <url>http://nexus.sxw.cn/repository/maven-public/</url>
-                    <releases>
-                        <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
-                    </releases>
-                    <snapshots>
-                        <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
-                    </snapshots>
-                </repository>
-            </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <id>maven-public</id>
-                    <url>http://nexus.sxw.cn/repository/maven-public/</url>
-                </pluginRepository>
-            </pluginRepositories>
+            <id>rdc</id>
             <distributionManagement>
                 <repository>
-                    <id>maven-releases</id>
-                    <url>http://nexus.sxw.cn/repository/maven-releases/</url>
+                    <id>rdc-release</id>
+                    <url>https://packages.aliyun.com/maven/repository/2022255-release-tukFBp/</url>
                 </repository>
                 <snapshotRepository>
-                    <id>maven-snapshots</id>
-                    <url>http://nexus.sxw.cn/repository/maven-snapshots/</url>
+                    <id>rdc-snapshots</id>
+                    <url>https://packages.aliyun.com/maven/repository/2022255-snapshot-Ls0fsC/</url>
                 </snapshotRepository>
             </distributionManagement>
         </profile>
-<!--        <profile>-->
-<!--            <id>aliyun-rdc</id>-->
-<!--            <distributionManagement>-->
-<!--                <repository>-->
-<!--                    <id>rdc-release</id>-->
-<!--                    <url>https://packages.aliyun.com/maven/repository/2022255-release-tukFBp/</url>-->
-<!--                </repository>-->
-<!--                <snapshotRepository>-->
-<!--                    <id>rdc-snapshot</id>-->
-<!--                    <url>https://packages.aliyun.com/maven/repository/2022255-snapshot-Ls0fsC/</url>-->
-<!--                </snapshotRepository>-->
-<!--            </distributionManagement>-->
-<!--        </profile>-->
     </profiles>
 </project>

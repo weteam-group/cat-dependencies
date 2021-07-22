@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.lakex</groupId>
     <artifactId>cat-dependencies</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>cat-dependencies</name>
@@ -13,11 +13,11 @@
         cat-spring framework maven dependencies management
     </description>
 
-    <url>http://cat.lakex.cn</url>
+    <url>https://cat.lakex.cn</url>
     <licenses>
         <license>
             <name>The LGPL License</name>
-            <url>http://www.gnu.org/licenses/lgpl-3.0.html</url>
+            <url>https://www.gnu.org/licenses/lgpl-3.0.html</url>
         </license>
     </licenses>
 
@@ -32,7 +32,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.3</version>
+        <version>2.5.2</version>
     </parent>
 
     <properties>
@@ -53,29 +53,32 @@
 
         <!-- ===================== The third party ===================== -->
         <!-- Spring Boot && Spring Cloud -->
-        <mica.version>2.4.3-GA</mica.version>
-        <mica.pro.version>2.1.6-SNAPSHOT</mica.pro.version>
-        <spring-boot.version>2.4.3</spring-boot.version>
-        <spring-boot.admin.version>2.4.0</spring-boot.admin.version>
-        <spring-cloud.version>2020.0.1</spring-cloud.version>
-        <spring-cloud-alibaba.version>2.2.5.RELEASE</spring-cloud-alibaba.version>
-        <retrofit-spring-boot-starter.version>2.2.7</retrofit-spring-boot-starter.version>
+        <mica.version>2.5.2</mica.version>
+        <mica.pro.version>2021.0.2</mica.pro.version>
+        <spring-boot.version>2.5.2</spring-boot.version>
+        <spring-boot.admin.version>2.4.3</spring-boot.admin.version>
+        <spring-cloud.version>2020.0.2</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.1</spring-cloud-alibaba.version>
+        <retrofit-spring-boot-starter.version>2.2.12</retrofit-spring-boot-starter.version>
+        <hutool.version>5.7.5</hutool.version>
 
         <!-- Utils -->
-        <lombok.version>1.18.18</lombok.version>
-        <mica-auto.version>2.0.3</mica-auto.version>
+        <lombok.version>1.18.20</lombok.version>
+        <mica-auto.version>2.1.1</mica-auto.version>
         <okhttp3.version>4.9.1</okhttp3.version>
         <okio.version>2.10.0</okio.version>
-        <jsoup.version>1.13.1</jsoup.version>
-        <aspectjweaver.version>1.9.6</aspectjweaver.version>
+        <jsoup.version>1.14.1</jsoup.version>
+        <aspectjweaver.version>1.9.7</aspectjweaver.version>
+        <vavr.version>0.10.4</vavr.version>
 
         <!-- swagger api doc -->
         <springfox-boot-starter.version>3.0.0</springfox-boot-starter.version>
-        <swagger-annotations.v3.version>2.1.7</swagger-annotations.v3.version>
+        <swagger-annotations.v3.version>2.1.10</swagger-annotations.v3.version>
 
         <!-- Data Source -->
         <mysql-driver-6.version>6.0.6</mysql-driver-6.version> <!-- just version -->
-        <jooq.version>3.14.8</jooq.version>
+        <mysql-driver-8.version>8,.0.26</mysql-driver-8.version> <!-- just version -->
+        <jooq.version>3.15.1</jooq.version>
 
         <jjwt.version>0.9.1</jjwt.version>
         <alibaba.jetcache.version>2.6.0</alibaba.jetcache.version>
@@ -83,23 +86,25 @@
         <alibaba.transmittable-thread-local.version>2.12.1</alibaba.transmittable-thread-local.version>
 
         <!-- Google OpenSources -->
-        <google.guava.version>30.1-jre</google.guava.version>
+        <google.guava.version>30.1.1-jre</google.guava.version>
         <google.guice.version>5.0.1</google.guice.version>
         <google.zxing.version>3.4.1</google.zxing.version>
-        <google.tink.version>1.5.0</google.tink.version>
+        <google.tink.version>1.6.1</google.tink.version>
         <google.findbugs.version>3.0.1</google.findbugs.version>
 
         <!-- Java Util -->
         <javax.jsr311-api.version>1.1.1</javax.jsr311-api.version>
-        <javax.validation.version>2.0.1.Final</javax.validation.version>
+        <javax.validation.version>3.0.0</javax.validation.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <hibernate-validator.version>7.0.1.Final</hibernate-validator.version>
+        <jakarta.el.version>4.0.0</jakarta.el.version>
 
         <!-- WeChat Platform SDK -->
         <!-- https://github.com/Wechat-Group/WxJava -->
-        <weixin-java-tools.version>4.0.0</weixin-java-tools.version> <!-- just version -->
+        <weixin-java-tools.version>4.1.0</weixin-java-tools.version> <!-- just version -->
 
         <!-- test -->
-        <junit-jupiter.version>5.7.1</junit-jupiter.version>
+        <junit-jupiter.version>5.7.2</junit-jupiter.version>
     </properties>
 
     <!-- All basic dependency management -->
@@ -149,6 +154,14 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-bom</artifactId>
+                <version>${hutool.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
             <!-- 强制排查依赖 tomcat -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -217,6 +230,11 @@
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjweaver</artifactId>
                 <version>${aspectjweaver.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.vavr</groupId>
+                <artifactId>vavr</artifactId>
+                <version>${vavr.version}</version>
             </dependency>
 
             <!-- Swagger Api Doc -->
@@ -307,9 +325,9 @@
                 <version>${javax.jsr311-api.version}</version>
             </dependency>
             <dependency>
-                <groupId>javax.validation</groupId>
-                <artifactId>validation-api</artifactId>
-                <version>${javax.validation.version}</version>
+                <groupId>jakarta.validation</groupId>
+                <artifactId>jakarta.validation-api</artifactId>
+                <version>3.0.0</version>
             </dependency>
             <dependency>
                 <groupId>org.mapstruct</groupId>
@@ -320,6 +338,21 @@
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct-processor</artifactId>
                 <version>${mapstruct.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator-cdi</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.glassfish</groupId>
+                <artifactId>jakarta.el</artifactId>
+                <version>${jakarta.el.version}</version>
             </dependency>
 
             <!-- TestCase -->
@@ -457,6 +490,19 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>blade-vip</id>
+            <url>http://nexus.bladex.vip/repository/maven-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <!-- 基于 Profiles 的 灵活仓库配置 -->
     <profiles>
